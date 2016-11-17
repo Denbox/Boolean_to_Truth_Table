@@ -4,9 +4,9 @@ header = raw_input('Header: ') #describes boolean values and output
 inputs = header.split()[:-1] #input nodes
 file_name = header.split()[-1] #affected node
 expression = raw_input('Expression: ') #boolean to parse
-exp = expression.replace('(', ' ( ').replace(')', ' ) ') #cleaned to make 
-#written in the form a and not b where a and b are the nodes in the header
-#you can use parenthesis, and, not, or but anything else breaks it
+exp = expression.replace('(', ' ( ').replace(')', ' ) ')
+#cleaned to separate parenthesis from words (spaces removed later anyway)
+#expression is valid if it can be parsed by eval()
 
 output = open(file_name+'.csv', 'w') #file to write to
 output.write(header+'\n') #top line of output file
